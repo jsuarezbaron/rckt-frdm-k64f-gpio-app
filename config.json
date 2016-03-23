@@ -1,0 +1,29 @@
+{
+  "_comment": [
+     "config.json: For frdm-k64f GPIO sample app",
+     "Modification History:",
+     "01Mar16,j_b  Initial version"
+     ],
+  "icon": "images/workbench-icon_20x20.png",
+  "name": "Digital Read/Write (GPIO)",
+  "description":"On-board RGB LED displays color combinations",
+  "tags": [
+     "rocket",
+     "arm",
+     "gpio"
+  ],
+  "lang": "C",
+  "cmds": {
+    	"clone": "$HAC_SDK_DIR/scripts/prjClone.pl -cfg %src%/config.json -prj %dest% -sdk $HAC_SDK_DIR -arch $SDK_ARCH"
+  },
+  "doc": "docs/fsl_k64_gpio_example.md",
+  "visibility": "local",
+  "executable": "outdir/zephyr.elf",
+  "type": "application",
+  "project_data": {
+    "init_clone":
+        { "fetch": { "scm":"git", "url":"https://github.com/wind-river-rocket/frdm-k64f-gpio-sample-app.git" } },
+    "rocket_kernel":
+        { "fetch": { "scm":"git", "url":"http://vxgit.wrs.com/scm/pubsdkex/happ-rocket-kernel.git" } }
+  }
+}
