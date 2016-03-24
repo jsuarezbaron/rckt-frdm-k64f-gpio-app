@@ -1,4 +1,5 @@
-# Copyright (c) 2015, Wind River Systems, Inc.
+#
+# Copyright (c) 2015-2016 Wind River Systems, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,7 +12,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-# These enviornment variables are defined externally by the SDK
-# enviornment
+# These environment variables are defined externally by the SDK
+# environment
 SOURCE_DIR := src
