@@ -7,6 +7,7 @@
   "icon": "images/workbench-icon_20x20.png",
   "name": "Digital Read/Write (GPIO)",
   "description":"On-board RGB LED displays color combinations",
+  "key": "rckt-frdm-k64f-gpio-app",
   "tags": [
      "rocket",
      "arm",
