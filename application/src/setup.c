@@ -87,13 +87,11 @@ int setup (void)
 
     /* Configure the SW3 GPIO pin: pull-up is required */
 
-    status = pinmux_pin_set(pinmux, K64_PIN_PTA4,
-                            K64_PINMUX_FUNC_GPIO |
-                            K64_PINMUX_PULL_ENABLE | K64_PINMUX_PULL_UP);
+    status = pinmux_pin_set(pinmux, K64_PIN_PTA4, K64_PINMUX_FUNC_GPIO);
 
     if (status == DEV_OK)
         {
-		status = gpio_pin_configure(gpio_a, 4, GPIO_DIR_IN);
+		status = gpio_pin_configure(gpio_a, 4, GPIO_DIR_IN | GPIO_PUD_PULL_UP);
         }
 
     if (status != DEV_OK)
