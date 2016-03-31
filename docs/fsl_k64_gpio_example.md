@@ -26,7 +26,7 @@ You can use general purpose I/O (GPIO) functionality on a Freescale Freedom-K64F
 
 ## Example Description
 
-The Kinetis K64 MCU has five 32-bit I/O ports. The ports are labeled A, B, C, D, and E.  Most of the I/O pins in the K64 MCU have multiple functions and are referred to by their port and pin. For example, the first pin on Port C is PTC1. Before the pins can be used, you must route the proper signal to it. 
+The Kinetis K64 MCU has five 32-bit I/O ports. The ports are labeled A, B, C, D, and E.  Most of the I/O pins in the K64 MCU have multiple functions and are referred to by their port and pin. For example, the first pin on Port C is PTC1. Before the pins can be used, you must route the proper signal to it.
 
 The following table shows the configuration needed for this example:
 
@@ -50,8 +50,12 @@ The following code excerpts show how the GPIO pin for the red LED is set up:
 ``` cpp
     /* Configure the RGB LED GPIO pins */
 
-    status = pinmux_pin_set(pinmux, K64_PIN_PTB22,
-                            K64_PINMUX_FUNC_GPIO | K64_PINMUX_GPIO_DIR_OUTPUT);
+    status = pinmux_pin_set(pinmux, K64_PIN_PTB22, K64_PINMUX_FUNC_GPIO);
+
+    if (status == DEV_OK)
+        {
+		status = gpio_pin_configure(gpio_b, 22, GPIO_DIR_OUT);
+        }
 
     ...
 

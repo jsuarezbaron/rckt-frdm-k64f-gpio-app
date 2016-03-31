@@ -88,8 +88,13 @@ int setup (void)
     /* Configure the SW3 GPIO pin: pull-up is required */
 
     status = pinmux_pin_set(pinmux, K64_PIN_PTA4,
-                            K64_PINMUX_FUNC_GPIO | K64_PINMUX_GPIO_DIR_INPUT |
+                            K64_PINMUX_FUNC_GPIO |
                             K64_PINMUX_PULL_ENABLE | K64_PINMUX_PULL_UP);
+
+    if (status == DEV_OK)
+        {
+		status = gpio_pin_configure(gpio_a, 4, GPIO_DIR_IN);
+        }
 
     if (status != DEV_OK)
         {
@@ -103,8 +108,13 @@ int setup (void)
 
     /* Configure the RGB LED GPIO pins */
 
-    status = pinmux_pin_set(pinmux, K64_PIN_PTB22,
-                            K64_PINMUX_FUNC_GPIO | K64_PINMUX_GPIO_DIR_OUTPUT);
+    status = pinmux_pin_set(pinmux, K64_PIN_PTB22, K64_PINMUX_FUNC_GPIO);
+
+    if (status == DEV_OK)
+        {
+		status = gpio_pin_configure(gpio_b, 22, GPIO_DIR_OUT);
+        }
+
     if (status != DEV_OK)
         {
         PRINT("Pin %d of GPIO Port B not configured!! Stopped.\n", LED_R);
@@ -115,8 +125,12 @@ int setup (void)
         PRINT("Pin %d of GPIO Port B configured\n", LED_R);
         }
 
-    status = pinmux_pin_set(pinmux, K64_PIN_PTB21,
-                            K64_PINMUX_FUNC_GPIO | K64_PINMUX_GPIO_DIR_OUTPUT);
+    status = pinmux_pin_set(pinmux, K64_PIN_PTB21, K64_PINMUX_FUNC_GPIO);
+
+    if (status == DEV_OK)
+        {
+		status = gpio_pin_configure(gpio_b, 21, GPIO_DIR_OUT);
+        }
 
     if (status != DEV_OK)
         {
@@ -128,8 +142,12 @@ int setup (void)
         PRINT("Pin %d of GPIO Port B configured\n", LED_B);
         }
 
-    status = pinmux_pin_set(pinmux, K64_PIN_PTE26,
-                            K64_PINMUX_FUNC_GPIO | K64_PINMUX_GPIO_DIR_OUTPUT);
+    status = pinmux_pin_set(pinmux, K64_PIN_PTE26, K64_PINMUX_FUNC_GPIO);
+
+    if (status == DEV_OK)
+        {
+		status = gpio_pin_configure(gpio_e, 26, GPIO_DIR_OUT);
+        }
 
     if (status != DEV_OK)
         {
