@@ -1,10 +1,8 @@
 # GPIO output on the Freedom K64F board
 
-This application demonstrates GPIO input and output on the Freedom K64F board.
-The on-board RGB LED cycles through color combinations and reads the state of switch SW3.
+This application demonstrates GPIO input and output on the Freedom K64F board. The on-board RGB LED cycles through color combinations and reads the state of switch SW3.
 
-The application sets the on-board RGB LED to display its color combinations.
-While switch SW3 is pressed, the LED will not change the LED color.
+The application sets the on-board RGB LED to display its color combinations. While switch SW3 is pressed, the LED does not change the LED color.
 
 ## Sample Output
 
@@ -25,4 +23,9 @@ LED is Blue+Green
 LED is Red+Blue+Green
 LED is OFF
 ```
+
 The current LED color combination is continually updated.
+
+##More Information
+
+Instructions for running this example are available from the [example wiki](https://github.com/wind-river-rocket/rckt-frdm-k64f-gpio-app/wiki).
